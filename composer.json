@@ -1,6 +1,6 @@
 {
-    "name": "vendor/rbac2",
-    "description": "rbac",
+    "name": "adm/rbac2",
+    "description": "yii2 rbac",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","rbac"],
     "license": "Apache-2.0",
