@@ -1,0 +1,21 @@
+{
+    "name": "vendor/rbac2",
+    "description": "rbac",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","rbac"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "lishengqiang",
+            "email": "120337210@qq.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "adm\\rbac2\\": ""
+        }
+    }
+}
