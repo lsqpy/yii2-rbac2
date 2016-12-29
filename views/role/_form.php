@@ -6,7 +6,6 @@ use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use adm\rbac2\AutocompleteAsset;
 use adm\rbac2\models\AuthItemChild;
-
 /* @var $this yii\web\View */
 /* @var $model common\models\AuthItem */
 /* @var $form yii\widgets\ActiveForm */
@@ -29,15 +28,15 @@ $user_access = ArrayHelper::getColumn(AuthItemChild::getUserAccess(Yii::$app->re
         </thead>
         <tbody>
         <?php
-        foreach (\core\models\AuthItem::getAuthItemGroupAll() as $access): ?>
+        foreach (\adm\rbac2\models\AuthItem::getAuthItemGroupAll() as $access): ?>
             <tr>
                 <td>
                     <input type="checkbox" level="1"><strong><?=$access['name']?></strong>
                 </td>
                 <td>
                     <?php foreach(\adm\rbac2\models\AuthItem::getAuthItemAccessByGroup($access['name']) as $item):?>
-                        <!-- 增加管理员DEBUG模式 -->
-                        <?php if(true):?>
+                        <!-- DEBUG模式 -->
+                        <?php if(Yii::$app->request->get('debug')):?>
                             <div class="col-md-3">
                                 <input type="checkbox" <?php if(in_array($item['name'],$user_access)):?> checked="checked" <?php endif;?>  name="auth_access[]" value="<?=$item['name']?>">
                                 <span><?=$item['description']?>(<?=$item['name']?>)</span>

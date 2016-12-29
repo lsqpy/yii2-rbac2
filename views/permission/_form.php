@@ -16,7 +16,7 @@ $auth_item = new AuthItem();
 $routes = $auth_item->getRoutes();  //所有路由
 $use_routes = ArrayHelper::getColumn(AuthItem::getPermission(), 'name');   //已使用的路由
 $diff_routes = array_diff($routes, $use_routes);
-AutocompleteAsset::addScript($this, [Url::base() . '/assets/auth_item_access.js',], [AutocompleteAsset::className(), 'depends' => 'adm\rbac2\AutocompleteAsset'])
+AutocompleteAsset::register($this);
 ?>
 
 <div class="auth-item-form">
